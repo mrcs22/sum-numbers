@@ -1,0 +1,68 @@
+ * {
+     box-sizing: border-box;
+ }
+
+ body {
+     height: 100vh;
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     font-family: Arial, sans-serif;
+
+     margin: 0;
+ }
+
+ .content {
+     width: 80%;
+     max-width: 400px;
+
+     text-align: center;
+
+     margin: auto;
+ }
+
+ h1 {
+     color: #333;
+ }
+
+ .input-wrapper {
+     margin-bottom: 2rem;
+ }
+
+ input{
+    width: 60%;
+
+    margin: 5px;
+    padding: 10px;
+ }
+
+ #output {
+     text-align: center; 
+ }
+
+ button {
+     width: 35%;
+
+     cursor: pointer;
+     color: white;
+     background-color: #4CAF50;
+     
+     margin: 5px;
+     padding: 10px;
+     border: none;
+     border-radius: 5px;
+ }
+
+ @media (min-width: 768px) {
+     .number-sum {
+         width: 50%;
+     }
+
+     #inputNumber,
+     #output,
+     button {
+         width: 100%;
+     }
+ }
