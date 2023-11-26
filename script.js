@@ -45,26 +45,14 @@ function calculateFromWeb() {
 function calculateFromTerminal(inputNumber) {
     const output = {};
 
-    if (inputNumber.trim() === "") {
-        console.log("É preciso digitar um número");
+    if (inputNumber?.trim() === "" || !/^\d+$/.test(inputNumber?.trim())) {
+        console.log("É preciso digitar um número inteiro e positivo");
         output.value = '0';
         return output;
     }
 
-    const parsedInput = parseFloat(inputNumber);
-
-    if (isNaN(parsedInput) || !Number.isInteger(parsedInput)) {
-        console.log("Digite um número inteiro válido");
-        output.value = '0';
-        return output;
-    }
-
-    if (parsedInput < 0) {
-        console.log("Digite um inteiro positivo.");
-        output.value = '0';
-        return output;
-    }
-
+    const parsedInput = parseInt(inputNumber);
+ 
     output.value = sumMultiplesOfThreeAndFiveUpToValue(parsedInput)
     return output;
 }
