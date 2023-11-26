@@ -1,11 +1,11 @@
 function getArithmeticProgression(multiple, number) {
-    const multiplesAmount = Math.floor((number -1) / multiple);
-    
+    const multiplesAmount = Math.floor((number - 1) / multiple);
+
     const result = multiple * (multiplesAmount * (multiplesAmount + 1)) / 2;
     return result;
 }
 
-function sumMultiplesOfThreeAndFiveUpToValue(value){
+function sumMultiplesOfThreeAndFiveUpToValue(value) {
     const multiplesOfFiveSum = getArithmeticProgression(5, value);
     const multiplesOfThreeSum = getArithmeticProgression(3, value);
     const multiplesOfFifteenSum = getArithmeticProgression(15, value);
@@ -40,7 +40,7 @@ function calculateFromWeb() {
     output.value = sumMultiplesOfThreeAndFiveUpToValue(parsedInput)
 }
 
- 
+
 
 function calculateFromTerminal(inputNumber) {
     const output = {};
@@ -70,11 +70,15 @@ function calculateFromTerminal(inputNumber) {
 }
 
 
-if (process.argv.length < 3) {
-    console.log("Por favor, forneça um número como argumento.");
-} else {
-    const inputNumber = process.argv[2];
+const isRunningFromNode = typeof process !== 'undefined'
 
-    const result = calculateFromTerminal(inputNumber);
-    console.log("Resultado:", result.value);
+if (isRunningFromNode) {
+    if (process.argv.length < 3) {
+        console.log("Por favor, forneça um número como argumento.");
+    } else {
+        const inputNumber = process.argv[2];
+
+        const result = calculateFromTerminal(inputNumber);
+        console.log("Resultado:", result.value);
+    }
 }
