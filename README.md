@@ -19,7 +19,7 @@ git clone git@github.com:mrcs22/sum-numbers.git
 ```
 Acesse o diretório do projeto
   ```bash
-cd numbers-sum
+cd sum-numbers
 ```
 Execute o script.js com Node.js, fornecendo o número desejado como argumento:
 ```bash
